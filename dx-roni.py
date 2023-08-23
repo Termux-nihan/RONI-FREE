@@ -28,13 +28,13 @@ cps=[]
 loop=0
 #-------------logo-----------------#
 logo=(f'''{B}
-`7MM"""Mq. `7MMF' `7MN.   `7MF'  .g8"""bgd
-{warna}  MM   `MM.  MM     MMN.    M  .dP'     `M
-{B}  MM   ,M9   MM     M YMb   M  dM'       `
-{warna}  MMmmdM9    MM     M  `MN. M  MM
- {B} MM         MM     M   `MM.M  MM.    `7MMF'
-{warna}  MM         MM     M     YMM  `Mb.     MM
-{B}.JMML.     .JMML. .JML.    YM    `"bmmmdPY
+$$$$$$$\   $$$$$$\  $$\   $$\ $$$$$$\ 
+{warna}  $$  __$$\ $$  __$$\ $$$\  $$ |\_$$  _|
+{B}  $$ |  $$ |$$ /  $$ |$$$$\ $$ |  $$ |   
+{warna}  $$$$$$$  |$$ |  $$ |$$ $$\$$ |  $$ |  
+ {B} $$  __$$< $$ |  $$ |$$ \$$$$ |  $$ |  
+{warna}  $$ |  $$ |$$ |  $$ |$$ |\$$$ |  $$ |  
+{B}.$$ |  $$ | $$$$$$  |$$ | \$$ |$$$$$$\ 
 {warna}--------------------------------------------{B}
  Owner    : {C}DX.RONI{B}
  Guthub   : DX-RONI-404
@@ -131,5 +131,15 @@ def method_crack(ids,passlist):
         loop+=1
     except:
         pass
+#-------------lock check- def---------------#
+def lock_check(uid):
+    sessionx=requests.Session()
+    urlx=f'https://www.facebook.com/p/{uid}'
+    req=bxx(sessionx.get(urlx).content,'html.parser')
+    tx=req.find('title').text
+    if tx =='Facebook':
+        return('LOCK')
+    else:
+        return('LIVE')
 #-------------end----------------#
 MR_DIPTO()
