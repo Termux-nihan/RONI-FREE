@@ -132,4 +132,4 @@ def method_crack(ids,passlist):
     except:
         pass
 #-------------end----------------#
-DX_RONI()
+MR_DIPTO()
